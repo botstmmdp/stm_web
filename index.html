@@ -45,6 +45,15 @@
                 <div class="sidebar-banner">
                     <img src="lateral7.png" alt="Información 7">
                 </div>
+                <div class="sidebar-banner">
+                    <img src="lateral8.png" alt="Información 7">
+                </div>
+                <div class="sidebar-banner">
+                    <img src="lateral9.png" alt="Información 7">
+                </div>
+                <div class="sidebar-banner">
+                    <img src="lateral10.png" alt="Información 7">
+                </div>
                 <!-- Bloque 2 (Duplicado para loop infinito) -->
                 <div class="sidebar-banner">
                     <img src="lateral1.png" alt="Información 1">
@@ -344,12 +353,13 @@
                 <i class="fas fa-times"></i>
             </button>
             <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 1.5rem;">
-                <div style="width: 45px; height: 45px; background: rgba(0, 0, 0, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;" class="news-icon-box">
+                <div style="width: 45px; height: 45px; background: rgba(0, 0, 0, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;"
+                    class="news-icon-box">
                     <i class="fas fa-newspaper" style="font-size: 1.2rem;" class="news-icon"></i>
                 </div>
                 <h2 class="modal-title" style="margin: 0; font-size: 1.8rem;">NOVEDADES STM</h2>
             </div>
-            
+
             <div id="newsFeed" class="news-feed-container">
                 <div class="loader-news">
                     <i class="fas fa-spinner fa-spin"></i>
@@ -361,14 +371,16 @@
 
     <!-- Novedad Detalle Modal (Nested style) -->
     <div id="modalNovedadDetail" class="modal-overlay" style="z-index: 3000;">
-        <div class="modal-content" style="max-width: 450px; padding: 2.5rem 2rem; border-radius: 35px; border-color: var(--primary-light);">
+        <div class="modal-content"
+            style="max-width: 450px; padding: 2.5rem 2rem; border-radius: 35px; border-color: var(--primary-light);">
             <button class="modal-close" onclick="closeNovedadDetailModal()">
                 <i class="fas fa-times"></i>
             </button>
             <div id="novedadDetailContent">
                 <!-- Se llena dinámicamente -->
             </div>
-            <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="closeNovedadDetailModal()">¡ENTENDIDO!</button>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;"
+                onclick="closeNovedadDetailModal()">¡ENTENDIDO!</button>
         </div>
     </div>
 
@@ -653,7 +665,7 @@
                         fecha: (c[3]?.v || c[3]?.f || "").toString(),
                         activo: (c[4]?.v || "").toString().trim().toUpperCase() === "SI"
                     };
-                }).filter(n => n.activo).sort((a,b) => getRawDate(b.fecha) - getRawDate(a.fecha));
+                }).filter(n => n.activo).sort((a, b) => getRawDate(b.fecha) - getRawDate(a.fecha));
 
                 renderNewsFeed(allNewsItems);
             } catch (e) {
@@ -674,7 +686,7 @@
                 const card = document.createElement('div');
                 card.className = "news-card-integrated";
                 if (idx === 0) card.classList.add('featured');
-                
+
                 card.onclick = () => showNovedadDetail(n);
                 card.innerHTML = `
                     <span class="news-date">${formatDate(n.fecha)}</span>
